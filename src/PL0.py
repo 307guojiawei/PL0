@@ -372,13 +372,13 @@ class Parser:
                 self.tool.error(16)
             cx1 = self.attr.cx
             self.tool.gen(Define.pCode['JPC'],0,0)
-            self.statement(fsys)
+            self.statement(fsys|{'else'})
             if self.attr.sym == "else":
-                self.attr.getsym()
+                self.tool.getSym()
                 cx2 = self.attr.cx
-                self.tool.gen(define.p_code['JMP'], 0, 0)
+                self.tool.gen(Define.pCode['JMP'], 0, 0)
                 self.attr.code[cx1].a = self.attr.cx
-                self.tool.statement(fsys)
+                self.statement(fsys)
                 self.attr.code[cx2].a = self.attr.cx
             else:
                 self.attr.code[cx1].a = self.attr.cx
