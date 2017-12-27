@@ -1,0 +1,21 @@
+var     x;
+
+procedure  func1;
+    var  y;
+    begin
+        read(y);
+        x:=y;
+   end;
+
+procedure  func2;
+    var    z;
+    begin
+         read(z);
+        x:=x+z;
+    end;
+begin
+   write(x);
+   call func1;
+   call func2;
+   write(x)
+end.
